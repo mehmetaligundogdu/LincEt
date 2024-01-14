@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "685934462933",
+    "project_id": "lincet0",
+    "storage_bucket": "lincet0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:685934462933:android:4a825951377504424ddf5c",
+        "android_client_info": {
+          "package_name": "com.lincet"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCZ24rXg7a7ZkEntsC5rOgtI24_IvjURc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

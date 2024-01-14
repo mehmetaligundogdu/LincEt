@@ -45,7 +45,7 @@ const Sign = ({navigation}) => {
                 placeholder="Şifrenizi tekrar giriniz..."
                 isSecure={true}
               />
-              <Button text="Giriş Yap" onPress={handleSubmit} />
+              <Button text="Kayıt Ol" onPress={handleSubmit} />
             </>
           )}
         </Formik>
