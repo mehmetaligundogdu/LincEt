@@ -1,11 +1,12 @@
 import {StyleSheet} from 'react-native';
+import {styles as commonStyle} from '../../styles/commonStyle';
 
 const base_style = StyleSheet.create({
   container: {
     alignItems: 'center',
-    padding: 10,
-    margin: 10,
-    borderRadius: 10,
+    padding: commonStyle.generic.padding,
+    margin: commonStyle.generic.margin,
+    borderRadius: commonStyle.generic.borderRadius,
   },
   button_container: {
     flexDirection: 'row',
@@ -23,24 +24,24 @@ export const styles = {
     ...base_style,
     container: {
       ...base_style.container,
-      backgroundColor: '#6F1E51',
+      backgroundColor: commonStyle.colors.mor,
     },
     title: {
       ...base_style.title,
-      color: 'white',
+      color: commonStyle.colors.white,
     },
   }),
   secondary: StyleSheet.create({
     ...base_style,
     container: {
       ...base_style.container,
-      backgroundColor: 'white',
+      backgroundColor: commonStyle.colors.white,
       borderWidth: 2,
-      borderColor: '#6F1E51',
+      borderColor: commonStyle.colors.mor,
     },
     title: {
       ...base_style.title,
-      color: '#6F1E51',
+      color: commonStyle.colors.mor,
     },
   }),
 };
