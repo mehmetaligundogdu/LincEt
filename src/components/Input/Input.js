@@ -12,6 +12,7 @@ const Input = ({placeholder, value, onType, isSecure}) => {
         value={value}
         onChangeText={onType}
         secureTextEntry={isSecure}
+        autoCapitalize="none"
       />
     </View>
   );

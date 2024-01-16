@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
-import {ActivityIndicator, SafeAreaView, Text, View} from 'react-native';
+import {SafeAreaView, Text, View} from 'react-native';
 import auth from '@react-native-firebase/auth';
+import authErrorMessages from '../../../utils/authErrorMessages';
 
 import {Formik} from 'formik';
+import {showMessage} from 'react-native-flash-message';
 import {styles} from './Login.style';
 import {Input} from '../../../components/Input';
 import {Button} from '../../../components/Button';
@@ -24,10 +26,17 @@ const Login = ({navigation}) => {
         formValues.usermail,
         formValues.password,
       );
+      showMessage({
+        message: 'Giriş başarılı',
+        type: 'success',
+      });
       setLoading(false);
     } catch (error) {
-      console.log(error);
-      setLoading(true);
+      showMessage({
+        message: authErrorMessages(error.code),
+        type: 'danger',
+      });
+      setLoading(false);
     }
   }
 
@@ -49,7 +58,7 @@ const Login = ({navigation}) => {
                 value={values.password}
                 onType={handleChange('password')}
                 placeholder="Şifrenizi giriniz..."
-                isSecure={true}
+                isSecure
               />
               <Button
                 text="Giriş Yap"
