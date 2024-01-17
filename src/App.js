@@ -4,7 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import FlashMessage from 'react-native-flash-message';
 import {Login} from './pages/auth/Login';
 import {Sign} from './pages/auth/Sign';
-import {Messages} from './components/MessageCard/Messages';
+import {Messages} from './components/Card/MessageCard/Messages';
 
 const Stack = createNativeStackNavigator();
 
