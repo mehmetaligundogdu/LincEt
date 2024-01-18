@@ -7,9 +7,9 @@ export const styles = StyleSheet.create({
     backgroundColor: commonStyles.colors.white,
     padding: commonStyles.generic.padding * 2,
     marginHorizontal: commonStyles.generic.margin,
-    borderTopLeftRadius: 10,
-    borderTopRightRadius: 10,
-    height: deviceSize.height / 3,
+    borderTopLeftRadius: 15,
+    borderTopRightRadius: 15,
+    height: deviceSize.height / 2,
   },
   modal: {
     justifyContent: 'flex-end',
