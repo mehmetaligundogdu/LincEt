@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
     color: commonStyle.colors.mor,
   },
   span: {
-    textDecorationColor: 'white',
+    textDecorationColor: commonStyle.colors.white,
     textDecorationLine: 'line-through',
   },
 });
