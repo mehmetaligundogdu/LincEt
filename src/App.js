@@ -3,7 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import FlashMessage from 'react-native-flash-message';
 import auth from '@react-native-firebase/auth';
-import Icon from 'react-navive-vector-icons/MaterialCommunityIcons';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import {Login} from './pages/auth/Login';
 import {Sign} from './pages/auth/Sign';
@@ -33,7 +33,11 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator>
         {!userSession ? (
-          <Stack.Screen name="AuthPage" component={Auth} />
+          <Stack.Screen
+            name="AuthPage"
+            component={Auth}
+            options={{headerShown: false}}
+          />
         ) : (
           <Stack.Screen
             name="MessagesPage"
@@ -44,7 +48,14 @@ const App = () => {
               headerTitleStyle: {
                 fontWeight: 'bold',
               },
-              headerRight: () => <Icon />,
+              headerRight: () => (
+                <Icon
+                  name="logout"
+                  size={30}
+                  color="#6F1E51"
+                  onPress={() => auth().signOut()}
+                />
+              ),
             }}
           />
         )}
