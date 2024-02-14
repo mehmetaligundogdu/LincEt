@@ -31,4 +31,16 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     fontStyle: 'italic',
   },
+  footer: {
+    backgroundColor: commonStyle.colors.white,
+    borderRadius: commonStyle.generic.borderRadius,
+  },
+  lincContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  lincCounContainer: {
+    backgroundColor: commonStyle.colors.mor,
+    borderRadius: commonStyle.generic.borderRadius,
+  },
 });

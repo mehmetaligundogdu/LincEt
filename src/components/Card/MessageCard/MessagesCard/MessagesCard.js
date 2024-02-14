@@ -1,10 +1,10 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import {styles} from './Messages.style';
 import {formatDistance, parseISO} from 'date-fns';
 import {tr} from 'date-fns/locale';
 
-const MessagesCard = ({messages}) => {
+const MessagesCard = ({messages, lincle}) => {
   const timeZone = formatDistance(parseISO(messages.date), new Date(), {
     addSuffix: true,
     locale: tr,
@@ -16,6 +16,16 @@ const MessagesCard = ({messages}) => {
         <Text style={styles.date}>{timeZone}</Text>
       </View>
       <Text style={styles.title}>{messages.text}</Text>
+      <View style={styles.footer}>
+        <TouchableOpacity style={styles.lincContainer} onPress={lincle}>
+          {!!messages.linc && (
+            <View style={styles.lincCounContainer}>
+              <Text style={styles.lincText}>{messages.linc}</Text>
+            </View>
+          )}
+          <Text style={styles.lincText}>Linç Et ¿?</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };

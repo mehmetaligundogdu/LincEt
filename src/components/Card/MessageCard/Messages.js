@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView, FlatList, Text} from 'react-native';
+import {SafeAreaView, FlatList} from 'react-native';
 import {FloatingButton} from '../../FloatingButton';
 import {ContentInputModal} from '../../Modal/ContentInputModal';
 import database from '@react-native-firebase/database';
@@ -19,12 +19,7 @@ const Messages = () => {
       .ref('messages/')
       .on('value', snapshot => {
         const messageData = snapshot.val();
-
-        if (!messageData) {
-          // If there is no message data, return
-          return;
-        }
-        const parsedData = parseContentData(messageData);
+        const parsedData = parseContentData(messageData || {});
         setMessages(parsedData);
       });
   }, []);
@@ -40,14 +35,24 @@ const Messages = () => {
     const userMail = auth().currentUser.email;
 
     const contentObj = {
+      //content object's initial values
       text: content,
       username: userMail.split('@')[0],
       date: new Date().toISOString(),
+      linc: 0,
     };
     database().ref('messages/').push(contentObj);
     console.log(contentObj);
   }
-  const renderMessages = ({item}) => <MessagesCard messages={item} />;
+  const handleLincle = item => {
+    database()
+      .ref(`messages/${item.id}/`)
+      .update({linc: item.linc + 1});
+  };
+
+  const renderMessages = ({item}) => (
+    <MessagesCard messages={item} lincle={() => handleLincle(item)} />
+  );
 
   return (
     <SafeAreaView style={styles.container}>
