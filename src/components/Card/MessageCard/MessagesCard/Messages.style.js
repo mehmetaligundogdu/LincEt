@@ -5,19 +5,18 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: commonStyle.colors.mor,
-    height: 100,
+    height: 120,
     padding: commonStyle.generic.padding,
     margin: commonStyle.generic.margin,
     borderRadius: commonStyle.generic.borderRadius,
   },
   innerContainer: {
-    flex: 1,
     flexDirection: 'row',
   },
   user: {
     color: commonStyle.colors.white,
     fontSize: 20,
-    fontWeight: 'bold',
+    fontStyle: 'italic',
   },
   date: {
     flex: 1,
@@ -29,18 +28,38 @@ export const styles = StyleSheet.create({
   title: {
     color: commonStyle.colors.white,
     fontSize: 16,
-    fontStyle: 'italic',
+    fontWeight: 'bold',
+  },
+  footerContainer: {
+    marginTop: 5,
   },
   footer: {
     backgroundColor: commonStyle.colors.white,
-    borderRadius: commonStyle.generic.borderRadius,
+    borderRadius: commonStyle.generic.borderRadius * 2,
+    padding: 2,
+    alignSelf: 'flex-end',
+    marginTop: 15,
   },
   lincContainer: {
     flexDirection: 'row',
-    alignItems: 'center',
+    justifyContent: 'center',
   },
-  lincCounContainer: {
+  lincCountContainer: {
     backgroundColor: commonStyle.colors.mor,
-    borderRadius: commonStyle.generic.borderRadius,
+    borderRadius: 100,
+    padding: 5,
+    margin: 2,
+    marginRight: 5,
+  },
+  countText: {
+    color: commonStyle.colors.white,
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  lincText: {
+    color: commonStyle.colors.mor,
+    fontWeight: 'bold',
+    fontSize: 16,
+    alignSelf: 'center',
   },
 });

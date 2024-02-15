@@ -15,16 +15,18 @@ const MessagesCard = ({messages, lincle}) => {
         <Text style={styles.user}>{messages.username}</Text>
         <Text style={styles.date}>{timeZone}</Text>
       </View>
-      <Text style={styles.title}>{messages.text}</Text>
-      <View style={styles.footer}>
-        <TouchableOpacity style={styles.lincContainer} onPress={lincle}>
-          {!!messages.linc && (
-            <View style={styles.lincCounContainer}>
-              <Text style={styles.lincText}>{messages.linc}</Text>
-            </View>
-          )}
-          <Text style={styles.lincText}>Linç Et ¿?</Text>
-        </TouchableOpacity>
+      <View style={styles.footerContainer}>
+        <Text style={styles.title}>{messages.text}</Text>
+        <View style={styles.footer}>
+          <TouchableOpacity style={styles.lincContainer} onPress={lincle}>
+            {!!messages.linc && (
+              <View style={styles.lincCountContainer}>
+                <Text style={styles.countText}>{messages.linc}</Text>
+              </View>
+            )}
+            <Text style={styles.lincText}>Linç Et ¿?</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
