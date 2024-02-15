@@ -1,4 +1,5 @@
-# Linç Et ¿?
+# 📲 Linç Et ¿?
+
 
 **Linç Et ¿?**, kullanıcıların sadece linç edileceğini düşündüğü fikirlerini paylaşıp diğer kullanıcılardan linç almasını sağlayan bir mobil uygulamadır.
 
